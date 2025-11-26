@@ -1,0 +1,33 @@
+# Environnement virtuel
+Ml_env/
+venv/
+.venv/
+env/
+
+# Dataset (trop volumineux pour git)
+Dataset/
+dataset/
+data/
+*.csv
+*.jpg
+*.jpeg
+*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
