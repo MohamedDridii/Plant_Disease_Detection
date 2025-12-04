@@ -1,33 +1,8 @@
-# Environnement virtuel
-Ml_env/
-venv/
-.venv/
-env/
+# Ignorer tout par defaut
+*
 
-# Dataset (trop volumineux pour git)
-Dataset/
-dataset/
-data/
-*.csv
-*.jpg
-*.jpeg
-*.png
+# Sauf mobilenet.ipynb
+!mobilenet.ipynb
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-
-# Jupyter Notebook
-.ipynb_checkpoints/
-*.ipynb_checkpoints
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
+# Et le gitignore lui-meme
+!.gitignore
