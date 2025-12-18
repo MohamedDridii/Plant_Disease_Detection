@@ -1,0 +1,11 @@
+# Requirements pour l'application Flask Plant Disease Detector
+# Installation: pip install -r requirements.txt
+#
+# Note: tensorflow et numpy sont déjà dans l'environnement conda
+# Ce fichier contient seulement les dépendances supplémentaires
+
+# Framework web
+flask>=2.3.0
+
+# Traitement d'images (si pas déjà installé)
+Pillow>=9.5.0

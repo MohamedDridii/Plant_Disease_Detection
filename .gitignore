@@ -6,3 +6,8 @@
 
 # Et le gitignore lui-meme
 !.gitignore
+
+# Inclure le dossier de l'application Flask
+!flask_app/
+!flask_app/**
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Détection de Maladies des Plantes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>Plant Disease Detector</h1>
+            </div>
+            <p class="subtitle">Détection automatique des maladies des plantes par Intelligence Artificielle</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Zone de Drag and Drop -->
+            <div class="upload-section">
+                <div class="dropzone" id="dropzone">
+                    <div class="dropzone-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Glissez et déposez votre image ici</h3>
+                        <p>ou</p>
+                        <label for="file-input" class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i> Parcourir les fichiers
+                        </label>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                        <p class="file-types">Formats acceptés: PNG, JPG, JPEG, GIF, BMP</p>
+                    </div>
+                    <div class="dropzone-hover">
+                        <i class="fas fa-download"></i>
+                        <p>Relâchez pour analyser</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview de l'image -->
+            <div class="preview-section" id="preview-section" style="display: none;">
+                <div class="preview-card">
+                    <div class="preview-header">
+                        <h3><i class="fas fa-image"></i> Image sélectionnée</h3>
+                        <button class="btn btn-danger btn-sm" id="clear-btn">
+                            <i class="fas fa-times"></i> Effacer
+                        </button>
+                    </div>
+                    <div class="preview-body">
+                        <img id="preview-image" src="" alt="Preview">
+                    </div>
+                    <div class="preview-footer">
+                        <button class="btn btn-success btn-lg" id="analyze-btn">
+                            <i class="fas fa-search"></i> Analyser l'image
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loader -->
+            <div class="loader-section" id="loader-section" style="display: none;">
+                <div class="loader-card">
+                    <div class="spinner"></div>
+                    <h3>Analyse en cours...</h3>
+                    <p>Le modèle MobileNetV2 analyse votre image</p>
+                </div>
+            </div>
+
+            <!-- Résultats -->
+            <div class="results-section" id="results-section" style="display: none;">
+                <div class="results-card">
+                    <div class="results-header">
+                        <h3><i class="fas fa-chart-bar"></i> Résultats de l'analyse</h3>
+                    </div>
+                    <div class="results-body">
+                        <!-- Résultat principal -->
+                        <div class="main-result" id="main-result">
+                            <div class="result-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="result-info">
+                                <h4 id="result-class">-</h4>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" id="confidence-fill"></div>
+                                </div>
+                                <p class="confidence-text">Confiance: <span id="confidence-value">0%</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Top 3 prédictions -->
+                        <div class="top-predictions">
+                            <h4><i class="fas fa-list-ol"></i> Top 3 Prédictions</h4>
+                            <div class="predictions-list" id="predictions-list">
+                                <!-- Rempli dynamiquement -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="results-footer">
+                        <button class="btn btn-primary" id="new-analysis-btn">
+                            <i class="fas fa-redo"></i> Nouvelle analyse
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Projet Data Science - MobileNetV2 Transfer Learning</p>
+            <p>🌱 Détection de 23 classes de maladies des plantes</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
