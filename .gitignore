@@ -4,10 +4,14 @@
 # Sauf mobilenet.ipynb
 !mobilenet.ipynb
 
+
 # Et le gitignore lui-meme
 !.gitignore
 
 # Inclure le dossier de l'application Flask
 !flask_app/
 !flask_app/**
+
+# Inclure le modèle entraîné
+!best_mobilenet_model.keras
 
